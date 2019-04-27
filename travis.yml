@@ -1,14 +1,13 @@
 language: ruby
+install:
+  - gem uninstall bundler
+  - gem install bundler --version '2.0.1'
 cache: bundler
 branches:
   only:
   - release
 script:
   - JEKYLL_ENV=production bundle exec jekyll build --destination site
-install:
-  - rvm @global do gem uninstall bundler -x
-  - gem install bundler -v '~> 2.0.1' 
-  - bundle install
 deploy:
   provider: pages
   local-dir: ./site
