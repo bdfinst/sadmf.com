@@ -8,7 +8,7 @@ The source for all things anti-patterny
 
 ## Site info
 
-Built with [Jekyll](https://jekyllrb.com/)
-Theme: [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+- Built with [Jekyll](https://jekyllrb.com/)
+- Theme: [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
 
 
