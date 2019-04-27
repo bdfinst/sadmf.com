@@ -1,60 +1,18 @@
-# References:
-# - https://docs.travis-ci.com/user/caching/#Bundler
-sudo: false
-dist: trusty
 language: ruby
 cache: bundler
-rvm:
-  - 2.5.3
-bundler_args: --without development
-env:
-  global:
-  # speeds up installation of htmlproofer
-  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-addons:
-  apt:
-    packages:
-      # Needed for htmlproofer external link checks
-      - libcurl4-openssl-dev
 branches:
   only:
-    - release
-jobs:
-  include:
-    - stage: Test
-      before_script:
-        - npm install -g sass-lint htmllint-cli markdownlint-cli
-      script:
-        - JEKYLL_ENV=production bundle exec jekyll build
-        - htmllint _includes/stripped_markdown.html
-        - markdownlint _posts _drafts _pages README.md
-        - sass-lint --verbose --no-exit
-        # Explanations for flags:
-        # --allow-hash-href - Build will fail on the first and last post entries
-        # if this isn't allowed since there will be previous and next buttons
-        # that have 'links to nowhere'.
-        # --assume-extension - Jekyll 3 supports extensionless URLs, and
-        # the blog uses them, so this flag needs to be here to prevent errors.
-        # --url-ignore "/localhost/" - Posts have explicit references to
-        # localhost, so don't consider them proper external links that need to
-        # go anywhere.
-        # --http-status-ignore "999" - LinkedIn doesn't seem to like crawlers,
-        # and hence sends back 999 errors, even if the link is valid.
-        # --disable-external - Only use this if the build fails unreasonably on external links
-        - gem install bundler:2.0.1
-        - bundle exec htmlproofer _site --allow-hash-href --assume-extension --url-ignore "/localhost/" --http-status-ignore "999" # --disable-external
-    - stage: Github Release
-      script:
-        - JEKYLL_ENV=production bundle exec jekyll build
-      deploy:
-        provider: pages
-        local-dir: ./_site
-        target-branch: gh-pages
-        name: Travis Deployment Bot
-        skip-cleanup: true
-        # This token generated at https://github.com/settings/tokens and added
-        # to Travis environment variables.
-        github-token: $GITHUB_TOKEN
-        keep-history: true
-        on:
-          branch: master
+  - release
+script:
+  - JEKYLL_ENV=production bundle exec jekyll build --destination site
+deploy:
+  provider: pages
+  local-dir: ./site
+  target-branch: master
+  email: deploy@travis-ci.org
+  name: Deployment Bot
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: release
