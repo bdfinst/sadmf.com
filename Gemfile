@@ -20,9 +20,9 @@ group :development, :test do
 end
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", "~> 2.0"
 gem "json"
 gem "hash-joiner"
+gem "minimal-mistakes-jekyll"
 
 group :jekyll_plugins do
   # A Jekyll plugin that incorporates LiveReload

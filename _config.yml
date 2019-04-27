@@ -31,7 +31,7 @@ github_username:  bdfinst
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
 
