@@ -41,6 +41,7 @@ jobs:
         # --http-status-ignore "999" - LinkedIn doesn't seem to like crawlers,
         # and hence sends back 999 errors, even if the link is valid.
         # --disable-external - Only use this if the build fails unreasonably on external links
+        - gem install bundler:2.0.1
         - bundle exec htmlproofer _site --allow-hash-href --assume-extension --url-ignore "/localhost/" --http-status-ignore "999" # --disable-external
     - stage: Github Release
       script:
