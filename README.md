@@ -1,4 +1,4 @@
-# Scaled Agile DevOps Matruity Framework
+# Scaled Agile DevOps Maturity Framework
 
 [![Build Status](https://travis-ci.org/bdfinst/sadmf.com.svg?branch=release)](https://travis-ci.org/bdfinst/sadmf.com)
 
