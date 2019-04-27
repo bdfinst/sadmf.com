@@ -33,6 +33,20 @@ github_username:  bdfinst
 markdown: kramdown
 # theme: minima
 theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "neon"
+
+# Site settings
+locale            : "en-US"
+title             : "Scaled Agile DevOps Maturity Framework"
+title_separator   : "|"
+description       : "Enterprise DevOps transformation without the need for culture change"
+url               : "https://scaledagiledevops.com"
+repository        : "bdfinst/sadmf.com"
+teaser            : /assets/images/question-marks.png
+#logo              : "/assets/images/logo.png"
+breadcrumbs       : true
+search            : true
+
 plugins:
   - jekyll-feed
   - jekyll-include-cache
