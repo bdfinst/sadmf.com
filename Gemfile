@@ -19,6 +19,11 @@ group :development, :test do
   gem "html-proofer", "~> 3.9"
 end
 
+# This is the default theme for new Jekyll sites. You may change this to anything you like.
+gem "minima", "~> 2.0"
+gem "json"
+gem "hash-joiner"
+
 group :jekyll_plugins do
   # A Jekyll plugin that incorporates LiveReload
   gem "hawkins", "~> 2.0"
@@ -41,8 +46,6 @@ group :jekyll_plugins do
   gem "jekyll-paginate", "~> 1.1"
   # Seamlessly specify multiple redirections URLs for your pages and posts
   gem "jekyll-redirect-from", "~> 0.14"
-  # Jekyll plugin for building Jekyll sites with any GitHub-hosted theme
-  gem "jekyll-remote-theme", "~> 0.3"
   # A Jekyll plugin to add metadata tags for search engines and social networks
   # to better index and display your site's content.
   gem "jekyll-seo-tag", "~> 2.5"
