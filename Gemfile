@@ -20,7 +20,8 @@ group :development, :test do
 end
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", "~> 2.0"
+# gem "minima", "~> 2.0"
+gem "minimal-mistakes-jekyll"
 gem "json"
 gem "hash-joiner"
 
@@ -39,7 +40,7 @@ group :jekyll_plugins do
   # A Jekyll plugin to cache the rendering of Liquid includes
   # jekyll-include-cache needed for minimal mistakes theme.
   # See https://github.com/mmistakes/minimal-mistakes
-  gem "jekyll-include-cache", "~> 0.1"
+  gem "jekyll-include-cache"
   # Jekyll HTML/XML/CSS/JS Minifier utilising yui-compressor, and htmlcompressor
   gem "jekyll-minifier", "~> 0.1"
   # Pagination Generator for Jekyll

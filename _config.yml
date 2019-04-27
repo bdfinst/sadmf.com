@@ -31,9 +31,13 @@ github_username:  bdfinst
 
 # Build settings
 markdown: kramdown
-theme: minima
+# theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
+
+github: [metadata]
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
